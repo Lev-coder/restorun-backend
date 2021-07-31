@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->text("description");
             $table->unsignedBigInteger("without_penny");
             $table->smallInteger("penny")->unsigned();
-            $table->binary("img");
+            $table->binary("img")->nullable();
             $table->timestamps();
         });
     }
