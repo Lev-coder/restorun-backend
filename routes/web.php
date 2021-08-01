@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\Restorun\ProductController;
 use \App\Http\Controllers\Restorun\UserController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +15,9 @@ use \App\Http\Controllers\Restorun\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::resource('/product',ProductController::class);
 Route::resource('/user',UserController::class);
 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
