@@ -20,4 +20,4 @@ Auth::routes();
 Route::resource('/product',ProductController::class);
 Route::resource('/user',UserController::class);
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
